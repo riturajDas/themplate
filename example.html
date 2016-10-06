@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+<!--add links and metadata-->
+</head>
+
+<body style="background:#B39DDB
+;">
+<h1 id="tempOne" style="text-align:center;font-family:Helvetica;margin-top:30vh;font-size:500%;">%big_text%</h1>
+<hr style="width:50%;">
+<div>1
+  <p id="tempTwo" style="text-align:center;font-family:Helvetica;font-size:100%;">Hi ! My name is '%first_name%' of house '%last_name%'. First of the name and the owner of this repo ,i.e., '%repo_name%'( ofcourse).</p>
+</div>
+
+<script type="text/javascript" src="render.js"></script>
+<script type="text/javascript">
+<!--template one ,i.e., the big welcome text-->
+  var content = document.getElementById("tempOne").innerHTML;  //fetch template
+  var justAnObject = {"big_text" : "Hello World !"};  //pass an object
+  var data = render(content, justAnObject);  //generate desired content
+  document.getElementById("tempOne").innerHTML = data; //write generated data to the page
+
+<!--template two ,i.e., the following House details, ahemm-->
+  var content = document.getElementById("tempTwo").innerHTML;  //fetch template
+  var justAnotherObject = {"first_name":"Rituraj", "last_name":"Das", "repo_name":"slayerOne"};  //pass an object
+  var data = render(content, justAnotherObject);  //generate desired content
+  document.getElementById("tempTwo").innerHTML = data; //write generated data to the page
+
+
+</script>
+
+</body>
